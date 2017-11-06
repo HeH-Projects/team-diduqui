@@ -66,16 +66,20 @@ table(Rooms) {
 }
 
 verb(Contains)
+verb(Handles)
 verb(Owns)
 verb(Takes)
 
-Appointments "1, 1" -- Contains
+Appointments -- "1, 1" Contains
 Contains "0, 1" -- Rooms
 
-Dogs "1, 1" -- Owns
-Owns "1, N" -- Customers
+Dogs -- "1, 1" Owns
+Owns "0, N" -- Customers
 
-Customers "0, N" - Takes
+Customers - "0, N" Takes
 Takes "1, 1" - Appointments
+
+Doctors -- "0, N" Handles
+Handles "1, 1" -- Appointments
 
 @enduml
