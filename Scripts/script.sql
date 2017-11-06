@@ -70,23 +70,23 @@ CREATE UNIQUE INDEX secretary_id_uindex ON public.secretary (id);
 
 --Adding foreign key--
 ALTER TABLE public.dog
-    ADD CONSTRAINT IF NOT EXISTS fk_dog_id_customer
+    ADD CONSTRAINT fk_dog_id_customer
     FOREIGN KEY(id)
-    REFERENCES customer(id)
+    REFERENCES customer(id);
 
 ALTER TABLE public.room
     ADD CONSTRAINT fk_room_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id)
+    REFERENCES appointment(id);
 
 ALTER TABLE public.customer
     ADD CONSTRAINT fk_customer_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id)
+    REFERENCES appointment(id);
 
 ALTER TABLE public.doctor
     ADD CONSTRAINT fk_doctor_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id)
+    REFERENCES appointment(id);
 
 
