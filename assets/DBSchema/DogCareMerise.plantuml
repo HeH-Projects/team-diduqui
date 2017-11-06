@@ -1,0 +1,81 @@
+@startuml
+
+!define table(x) class x << (T,#FFAAAA) >>
+!define verb(x) interface x << (V,#FFAAAA) >>
+!define primary_key(x) <u>x</u>
+skinparam dpi 300
+hide methods
+hide empty members
+hide circle
+hide stereotypes
+
+table(Secretaries) {
+    primary_key(id)
+    --
+    email
+    firstname
+    lastname
+    password
+    phone
+}
+
+table(Doctors) {
+    primary_key(id)
+    --
+    email
+    firstname
+    lastname
+    phone
+    specialty
+}
+
+table(Customers) {
+    primary_key(id)
+    --
+    address
+    billing_address
+    email
+    firstname
+    lastname
+    phone
+}
+
+table(Appointments) {
+        primary_key(id)
+        --
+        description
+        name
+        duration
+}
+
+table(Dogs) {
+    primary_key(id)
+    --
+    description
+    dog_breed
+    name
+    size
+    weight
+}
+
+table(Rooms) {
+    primary_key(id)
+    --
+    description
+    name
+}
+
+verb(Contains)
+verb(Owns)
+verb(Takes)
+
+Appointments "1, 1" -- Contains
+Contains "0, 1" -- Rooms
+
+Dogs "1, 1" -- Owns
+Owns "1, N" -- Customers
+
+Customers "0, N" - Takes
+Takes "1, 1" - Appointments
+
+@enduml
