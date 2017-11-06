@@ -1,5 +1,6 @@
 # DogCare
 
+[![Build Status](https://travis-ci.org/HeH-Projects/team-diduqui.svg?branch=master)](https://travis-ci.org/HeH-Projects/team-diduqui)
 [![Build Status](https://travis-ci.org/HeH-Projects/team-agozzino.svg?branch=master)](https://travis-ci.org/HeH-Projects/team-agozzino)
 
 ![angular-logo](assets/angular.png "Angular logo") ![spring-logo](assets/spring.png "Spring logo")
