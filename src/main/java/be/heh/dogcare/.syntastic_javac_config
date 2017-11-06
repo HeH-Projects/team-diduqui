@@ -1,0 +1,3 @@
+
+
+let g:syntastic_java_javac_classpath = '/home/gquittet/Documents/Ecole/HEH/BAC3/Applications et systèmes d''entreprise/Projet/build/classes:/home/gquittet/Documents/Ecole/HEH/BAC3/Applications et systèmes d''entreprise/Projet/build/libs/*.jar:/opt/android-sdk/platforms/android-26/*.jar'

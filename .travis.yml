@@ -1,0 +1,14 @@
+language: java
+
+notifications:
+  email: false
+
+branches:
+  only:
+  - develop
+  - master
+
+deploy:
+  provider: heroku
+  api_key: "5fb8cbd6-2180-4b5f-baf1-98a31e56a286"
+  app: dogcare-teamdiduqui
