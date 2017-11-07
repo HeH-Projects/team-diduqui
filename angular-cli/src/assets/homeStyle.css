@@ -1,0 +1,73 @@
+body {
+    background-image     : url('bg.jpg');
+    min-height           : 100%;
+    width                : 100%;
+    background-size      : cover;
+    background-attachment: fixed;
+    background-repeat    : no-repeat;
+    background-position  : center center;
+    z-index              : 1;
+}
+
+/* HEADER */
+
+header {
+    background-color     : #EEE;
+    background-color     : rgba(238, 238, 238, 0.75);
+    width                : 100%;
+    position             : fixed;
+        top              : 0;
+        left             : 0;
+    height               : 70px;
+}
+header img, header h1 {
+    float                : left;
+    vertical-align       : text-top;
+    margin-top           : 10px;
+    margin-left          : 10px;
+}
+header h1 {
+    margin-top           : 20px;
+    margin-left          : 10px;
+    color                : black;
+}
+
+/* MAIN */
+
+main {
+    margin-top           : 90px;
+}
+#containForm {
+    position             : absolute;
+        left             : 0;
+        top              : 25%;
+    width                : 100%;
+}
+#loginForm {
+    background-color     : #F9ECCF;
+    background-color     : rgba(252, 239, 207, 0.9);
+    margin               : 0 auto;
+    padding              : 20px;
+    border-radius        : 7px;
+    width                : 25vw;
+}
+h3 {
+    text-align           : center;
+    margin-top           : 0;
+    margin-bottom        : 0;
+}
+hr {
+    border               : 0;
+    border-top           : 1px solid #ccc
+}
+form .center {
+    text-align           : center;
+}
+
+#hidden {
+    display: none;
+}
+
+#visible {
+    display: block;
+}
