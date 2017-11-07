@@ -6,8 +6,9 @@ import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }          from '@angular/http';
 
-import { AppComponent }      from './app.component';
-import { UserFormComponent } from './user-form.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
     imports: [
@@ -18,8 +19,9 @@ import { UserFormComponent } from './user-form.component';
     ],
     declarations: [
         AppComponent,
-        UserFormComponent
+        HomeComponent,
+        LoginFormComponent
     ],
     bootstrap: [ AppComponent ]
-    })
-    export class AppModule { }
+})
+export class AppModule { }

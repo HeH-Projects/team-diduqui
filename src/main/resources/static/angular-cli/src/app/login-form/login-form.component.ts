@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-import { User }    from './User';
+import { User } from '../User';
 
 @Component({
-    selector: 'app-user-form',
-    templateUrl: './user-form.component.html'
+    selector: 'app-login-form',
+    templateUrl: './login-form.component.html',
+    styleUrls: ['./login-form.component.css']
 })
-export class UserFormComponent {
+export class LoginFormComponent implements OnInit {
+
+    //constructor() { }
+
+    ngOnInit() {}
+
+    ///////////////////////
 
     model = new User('', '');
 
@@ -49,12 +55,6 @@ export class UserFormComponent {
 
     hideDiagnostic() {
         this.diagnostic_state = 'hidden';
-    }
-
-    /////////////////////////////
-
-    submitForm(value: any){
-        console.log(value);
     }
 
 }
