@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image     : url('assets/bg.jpg');
+    min-height           : 100%;
+    width                : 100%;
+    background-size      : cover;
+    background-attachment: fixed;
+    background-repeat    : no-repeat;
+    background-position  : center center;
+    z-index              : 1;
+}
