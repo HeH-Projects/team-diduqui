@@ -15,6 +15,6 @@ public interface DoctorRepository extends PagingAndSortingRepository<Doctor, Lon
     List<Doctor> findByFirstname(@Param("firstname") String firstname);
     List<Doctor> findByLastname(@Param("lastname") String lastname);
     List<Doctor> findByPhone(@Param("phone") String phone);
-    List<Doctor> findBySpeciality(@Param("speciality") String speciality);
+    List<Doctor> findBySpecialty(@Param("specialty") String specialty);
 
 }

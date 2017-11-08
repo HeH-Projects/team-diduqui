@@ -1,10 +1,9 @@
 package be.heh.dogcare.Entities;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Dog {
@@ -14,7 +13,7 @@ public class Dog {
     private long id;
 
     private String description;
-    private String dog_breed;
+    private String dogBreed;
     private String name;
     private String size;
     private String weight;
@@ -36,8 +35,8 @@ public class Dog {
     /**
      * @return the dogBreed
      */
-    public String getDog_breed() {
-        return dog_breed;
+    public String getDogBreed() {
+        return dogBreed;
     }
 
     /**
@@ -64,8 +63,8 @@ public class Dog {
     /**
      * @param dog_breed the dogBreed to set
      */
-    public void setDog_breed(String dog_breed) {
-        this.dog_breed = dog_breed;
+    public void setDogBreed(String dog_breed) {
+        this.dogBreed = dog_breed;
     }
 
     /**
