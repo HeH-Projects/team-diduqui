@@ -9,6 +9,7 @@
 /bin/
 *.class
 *.log
+team-diduqui.iml
 
 # dependencies
 node_modules
