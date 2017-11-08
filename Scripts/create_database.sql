@@ -1,10 +1,3 @@
--- Copyright (c) 2017 the original author or authors
--- All rights reserved. This program and the accompanying materials
--- are made available under the terms of the GNU Lesser Public License v2.1
--- which accompanies this distribution, and is available at
--- http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
---
--- Creates the tables of the "public" schema.
 
 --Tables creation--
 CREATE TABLE IF NOT EXISTS public.appointment
@@ -19,9 +12,9 @@ CREATE TABLE IF NOT EXISTS public.appointment
 CREATE TABLE IF NOT EXISTS public.customer
 (
     id SERIAL PRIMARY KEY NOT NULL,
+    email VARCHAR(200),
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
-    email VARCHAR(200),
     billing_address VARCHAR(200) NOT NULL,
     phone VARCHAR(20),
     address VARCHAR(200)
@@ -31,6 +24,7 @@ CREATE TABLE IF NOT EXISTS public.customer
 CREATE TABLE IF NOT EXISTS public.doctor
 (
     id SERIAL PRIMARY KEY NOT NULL,
+    email VARCHAR(200) NOT NULL,
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
@@ -60,9 +54,9 @@ CREATE TABLE IF NOT EXISTS public.room
 CREATE TABLE IF NOT EXISTS public.secretary
 (
     id SERIAL PRIMARY KEY NOT NULL,
+    email VARCHAR(200) NOT NULL,
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
-    email VARCHAR(200) NOT NULL,
     password VARCHAR(200) NOT NULL,
     phone VARCHAR(20)
 );
