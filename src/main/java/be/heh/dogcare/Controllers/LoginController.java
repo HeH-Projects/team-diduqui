@@ -1,4 +1,4 @@
-package be.heh.dogcare.Controllers;;
+package be.heh.dogcare.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
