@@ -82,7 +82,7 @@ public class Dog {
     }
 
     /**
-     * @param weight the weight to set
+     * @param weight
      */
     public void setWeight(String weight) {
         this.weight = weight;

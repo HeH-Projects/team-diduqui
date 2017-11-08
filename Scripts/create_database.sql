@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS public.customer
     email VARCHAR(200),
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
-    billing_address VARCHAR(200) NOT NULL,
+    billingAddress VARCHAR(200) NOT NULL,
     phone VARCHAR(20),
     address VARCHAR(200)
 );
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS public.dog
 (
     id SERIAL PRIMARY KEY NOT NULL,
     description VARCHAR(500),
-    dog_breed VARCHAR(50) NOT NULL,
+    dogBreed VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     size FLOAT,
     weight FLOAT
