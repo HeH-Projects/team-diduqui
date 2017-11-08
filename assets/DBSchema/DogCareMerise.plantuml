@@ -9,7 +9,7 @@ hide empty members
 hide circle
 hide stereotypes
 
-table(Secretaries) {
+table(Secretary) {
     primary_key(id)
     --
     email
@@ -19,7 +19,7 @@ table(Secretaries) {
     phone
 }
 
-table(Doctors) {
+table(Doctor) {
     primary_key(id)
     --
     email
@@ -29,7 +29,7 @@ table(Doctors) {
     specialty
 }
 
-table(Customers) {
+table(Customer) {
     primary_key(id)
     --
     address
@@ -40,7 +40,7 @@ table(Customers) {
     phone
 }
 
-table(Appointments) {
+table(Appointment) {
         primary_key(id)
         --
         description
@@ -48,7 +48,7 @@ table(Appointments) {
         duration
 }
 
-table(Dogs) {
+table(Dog) {
     primary_key(id)
     --
     description
@@ -58,7 +58,7 @@ table(Dogs) {
     weight
 }
 
-table(Rooms) {
+table(Room) {
     primary_key(id)
     --
     description
@@ -70,16 +70,16 @@ verb(Handles)
 verb(Owns)
 verb(Takes)
 
-Appointments -- "1, 1" Contains
-Contains "0, 1" -- Rooms
+Appointment -- "1, 1" Contains
+Contains "0, 1" -- Room
 
-Dogs -- "1, 1" Owns
-Owns "0, N" -- Customers
+Dog -- "1, 1" Owns
+Owns "0, N" -- Customer
 
-Customers - "0, N" Takes
-Takes "1, 1" - Appointments
+Customer - "0, N" Takes
+Takes "1, 1" - Appointment
 
-Doctors -- "0, N" Handles
-Handles "1, 1" -- Appointments
+Doctor -- "0, N" Handles
+Handles "1, 1" -- Appointment
 
 @enduml
