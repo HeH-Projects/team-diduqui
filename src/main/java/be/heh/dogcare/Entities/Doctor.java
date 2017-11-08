@@ -17,7 +17,7 @@ public class Doctor {
     private String lastname;
     private String phone;
     private String specialty;
-    
+
     /**
      * @return the email
      */
