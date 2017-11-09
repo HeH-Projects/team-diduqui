@@ -8,9 +8,8 @@ branches:
   - develop
   - master
 
-cache:
-  directories:
-    - $HOME/.gradle
+before_install:
+  - npm install -g @angular/cli
 
 deploy:
   provider: heroku
