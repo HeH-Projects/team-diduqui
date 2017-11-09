@@ -2,14 +2,19 @@
 
 # compiled output
 /dist
+/frontend/dist/
 /tmp
+/backend/tmp
 /out-tsc
 /out
 /build
+/backend/build
 /bin/
+/backend/bin/
 *.class
 *.log
 team-diduqui.iml
+/backend/src/main/resources/static/
 
 # dependencies
 node_modules
@@ -46,6 +51,8 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
+/frontend/e2e/*.js
+/frontend/e2e/*.map
 
 # System Files
 .DS_Store

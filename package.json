@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build -prod",
+    "preinstall": "mkdir -p frontend/node_modules",
+    "install": "cd frontend && npm install",
+    "ng": "cd frontend/ && ng",
+    "start": "cd frontend/ ng serve --proxy-config proxy.conf.json",
+    "build": "cd frontend/ && ng build -prod",
     "postbuild": "npm run deploy",
-    "predeploy": "rimraf ../resources/static/ && mkdirp ../resources/static",
-    "deploy": "cp -rf dist/** ../resources/static",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "deploy": "cd frontend/ && npm run deploy",
+    "test": "cd frontend/ && ng test",
+    "lint": "cd frontend/ && ng lint",
+    "e2e": "cd frontend/ && ng e2e"
   },
   "private": true,
   "dependencies": {
