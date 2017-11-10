@@ -55,7 +55,7 @@ public class Customer {
     }
 
     /**
-     * @return the billing_address
+     * @return the billingAddress
      */
     public String getBillingAddress() {
         return billingAddress;
@@ -97,9 +97,9 @@ public class Customer {
     }
 
     /**
-     * @param billing_address the billing address to set
+     * @param billingAddress the billing address to set
      */
-    public void setBillingAddress(String billing_address) {
-        this.billingAddress = billing_address;
+    public void setBillingAddress(String billingAddress) {
+        this.billingAddress = billingAddress;
     }
 }
