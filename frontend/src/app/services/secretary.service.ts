@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class UserService {
+export class SecretaryService {
     constructor(private http: Http) { }
 
     getAll() {
