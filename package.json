@@ -7,7 +7,7 @@
     "preinstall": "mkdir -p frontend/node_modules",
     "install": "cd frontend && npm install",
     "ng": "cd frontend/ && ng",
-    "start": "cd frontend/ ng serve --proxy-config proxy.conf.json",
+    "start": "cd frontend/ && ng serve --proxy-config proxy.conf.json",
     "build": "cd frontend/ && ng build -prod",
     "postbuild": "npm run deploy",
     "deploy": "cd frontend/ && npm run deploy",
