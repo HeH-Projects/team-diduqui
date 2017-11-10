@@ -33,7 +33,7 @@ table(Customer) {
     primary_key(id)
     --
     address
-    billing_address
+    billingAddress
     email
     firstname
     lastname
@@ -52,7 +52,7 @@ table(Dog) {
     primary_key(id)
     --
     description
-    dog_breed
+    dogBreed
     name
     size
     weight
