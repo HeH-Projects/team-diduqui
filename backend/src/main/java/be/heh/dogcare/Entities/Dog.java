@@ -61,10 +61,10 @@ public class Dog {
     }
 
     /**
-     * @param dog_breed the dogBreed to set
+     * @param dogBreed the dogBreed to set
      */
-    public void setDogBreed(String dog_breed) {
-        this.dogBreed = dog_breed;
+    public void setDogBreed(String dogBreed) {
+        this.dogBreed = dogBreed;
     }
 
     /**
