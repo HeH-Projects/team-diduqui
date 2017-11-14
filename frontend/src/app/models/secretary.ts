@@ -1,8 +1,8 @@
 export class Secretary {
     id: number;
-    email: String;
-    firstname: String;
-    lastname: String;
-    password: String;
-    phone: String;
+    email: string;
+    firstname: string;
+    lastname: string;
+    password: string;
+    phone: string;
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }                  from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Secretary } from '../models/secretary';
+import { Secretary }                          from '../models/secretary';
+import { SecretaryService }                   from '../services/secretary.service';
 
 @Component({
     selector: 'app-login-form',
@@ -11,11 +12,10 @@ export class LoginFormComponent implements OnInit {
 
     //constructor() { }
 
-    ngOnInit() {}
-
     ///////////////////////
 
     model = new Secretary();
+    secretary:Secretary[];
 
     submitted = false;
 
@@ -27,12 +27,16 @@ export class LoginFormComponent implements OnInit {
 
     complexForm : FormGroup;
 
-    constructor(fb: FormBuilder){
+    constructor(private secretaryService: SecretaryService, fb: FormBuilder) {
         this.complexForm = fb.group({
             'email' : [null, Validators.compose([Validators.required, Validators.email])],
             'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])]
-        })
+        });
     };
+
+    ngOnInit() {
+        this.secretaryService.getAll().subscribe((secretary) =>  { this.secretary = secretary._embedded.secretary; console.log(this.secretary) });
+    }
 
     // Reveal in html:
     //   Email via form.controls = {{showFormControls(UserForm)}}
@@ -40,5 +44,4 @@ export class LoginFormComponent implements OnInit {
         return form && form.controls['email'] &&
         form.controls['email'].value;
     }
-
 }
