@@ -2,7 +2,7 @@
     <div id="loginForm">
         <h3><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Connexion</h3>
         <hr>
-        <form #userForm="ngForm">
+        <form #userForm="ngForm" (ngSubmit)="connection(complexForm.value);">
             <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['email'].valid && complexForm.controls['email'].touched}">
                 <label>Email address:</label>
                 <input class="form-control" type="email" id="email" name="email" [(ngModel)]="model.email" placeholder="Enter email" [formControl]="complexForm.controls['email']" required>
