@@ -3,10 +3,6 @@
         <h3><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Connexion</h3>
         <hr>
         <form #userForm="ngForm">
-            <!-- TODO: Remove this when we're done -->
-            <div id={{diagnostic_state}} class="center">
-                {{diagnostic}}
-            </div>
             <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['email'].valid && complexForm.controls['email'].touched}">
                 <label>Email address:</label>
                 <input class="form-control" type="email" id="email" name="email" [(ngModel)]="model.email" placeholder="Enter email" [formControl]="complexForm.controls['email']" required>
@@ -39,8 +35,6 @@
             </div>
             <div class="form-group center">
                 <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid" (click)="displayDiagnostic()">Connect</button>
-                <!-- TODO: Remove this when we're done -->
-                <button type="reset" class="btn btn-warning" (click)="newUser(); userForm.reset(); hideDiagnostic()">Reset</button>
             </div>
         </form>
     </div>

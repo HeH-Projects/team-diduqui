@@ -21,9 +21,6 @@ export class LoginFormComponent implements OnInit {
 
     onSubmit() { this.submitted = true; }
 
-    // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.model); }
-
     newUser() {
         this.model = new User('', '');
     }
@@ -42,19 +39,6 @@ export class LoginFormComponent implements OnInit {
     showFormControls(form: any) {
         return form && form.controls['email'] &&
         form.controls['email'].value;
-    }
-
-    /////////////////////////////
-
-    // TODO: Remove this when we're done
-    diagnostic_state:string = 'hidden';
-
-    displayDiagnostic() {
-        this.diagnostic_state = 'visible';
-    }
-
-    hideDiagnostic() {
-        this.diagnostic_state = 'hidden';
     }
 
 }
