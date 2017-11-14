@@ -1,7 +1,7 @@
 export class Dog {
     id: number;
     description: String;
-    dogBreed: String;
+    dogbreed: String;
     name: String;
     size: number;
     weight: number;

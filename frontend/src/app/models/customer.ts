@@ -1,7 +1,7 @@
 export class Customer {
     id: number;
     address: String;
-    billingAddress: String;
+    billingaddress: String;
     email: String;
     firstname: String;
     lastname: String;

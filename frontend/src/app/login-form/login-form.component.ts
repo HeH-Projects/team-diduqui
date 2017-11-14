@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from '../user';
+import { Secretary } from '../models/secretary';
 
 @Component({
     selector: 'app-login-form',
@@ -15,14 +15,14 @@ export class LoginFormComponent implements OnInit {
 
     ///////////////////////
 
-    model = new User('', '');
+    model = new Secretary();
 
     submitted = false;
 
     onSubmit() { this.submitted = true; }
 
     newUser() {
-        this.model = new User('', '');
+        this.model = new Secretary();
     }
 
     complexForm : FormGroup;
