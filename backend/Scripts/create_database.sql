@@ -61,7 +61,6 @@ CREATE TABLE IF NOT EXISTS public.secretary
     phone VARCHAR(20)
 );
 
-
 --Adding index to tables--
 CREATE UNIQUE INDEX appointment_id_uindex ON public.Appointment (id);
 CREATE UNIQUE INDEX customer_id_uindex ON public.customer (id);

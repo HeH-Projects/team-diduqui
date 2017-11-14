@@ -13,7 +13,7 @@ public class Customer {
     private long id;
 
     private String address;
-    private String billingAddress;
+    private String billingaddress;
     private String email;
     private String firstname;
     private String lastname;
@@ -58,7 +58,7 @@ public class Customer {
      * @return the billingAddress
      */
     public String getBillingAddress() {
-        return billingAddress;
+        return billingaddress;
     }
 
     /**
@@ -99,7 +99,7 @@ public class Customer {
     /**
      * @param billingAddress the billing address to set
      */
-    public void setBillingAddress(String billingAddress) {
-        this.billingAddress = billingAddress;
+    public void setBillingAddress(String billingaddress) {
+        this.billingaddress = billingaddress;
     }
 }

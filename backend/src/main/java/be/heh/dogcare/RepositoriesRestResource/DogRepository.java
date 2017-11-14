@@ -12,7 +12,7 @@ import be.heh.dogcare.Entities.Dog;
 public interface DogRepository extends PagingAndSortingRepository<Dog, Long> {
 
     List<Dog> findByDescription(@Param("description") String description);
-    List<Dog> findByDogBreed(@Param("dogBreed") String dogBreed);
+    List<Dog> findByDogbreed(@Param("dogbreed") String dogbreed);
     List<Dog> findByName(@Param("name") String name);
     List<Dog> findBySize(@Param("size") String size);
     List<Dog> findByWeight(@Param("weight") String weight);
