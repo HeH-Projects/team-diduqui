@@ -15,7 +15,7 @@ export class LoginFormComponent implements OnInit {
     ///////////////////////
 
     model = new Secretary();
-    secretary:Secretary[];
+    secretaries:Secretary[];
 
     submitted = false;
 
@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
     };
 
     ngOnInit() {
-        this.secretaryService.getAll().subscribe((secretary) =>  { this.secretary = secretary._embedded.secretary; console.log(this.secretary) });
+        this.secretaryService.getAll().subscribe((secretaries) =>  { this.secretaries = secretaries._embedded.secretary; console.log(this.secretaries) });
     }
 
     // Reveal in html:
