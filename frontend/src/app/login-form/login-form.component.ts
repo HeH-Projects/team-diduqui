@@ -1,7 +1,7 @@
-import { Component, OnInit }                  from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Secretary }                          from '../models/secretary';
-import { SecretaryService }                   from '../services/secretary.service';
+import { Secretary } from '../models/secretary';
+import { SecretaryService } from '../services/secretary.service';
 
 @Component({
     selector: 'app-login-form',
@@ -15,7 +15,7 @@ export class LoginFormComponent implements OnInit {
     ///////////////////////
 
     model = new Secretary();
-    secretaries:Secretary[] = new Secretary()[9];
+    secretaries: Secretary[] = new Secretary()[9];
     success: boolean;
 
     submitted = false;
@@ -26,11 +26,11 @@ export class LoginFormComponent implements OnInit {
         this.model = new Secretary();
     }
 
-    complexForm : FormGroup;
+    complexForm: FormGroup;
 
     constructor(private secretaryService: SecretaryService, fb: FormBuilder) {
         this.complexForm = fb.group({
-            'email' : [null, Validators.compose([Validators.required, Validators.email])],
+            'email': [null, Validators.compose([Validators.required, Validators.email])],
             'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])]
         });
     }
@@ -40,9 +40,10 @@ export class LoginFormComponent implements OnInit {
     //Second callback: error,
     //Third callback: Action after response
     ngOnInit() {
-        this.secretaryService.getAll().subscribe((secretaries) =>  { this.secretaries = secretaries._embedded.secretary; },
-                                                 (error) => console.log(error),
-                                                 () => this.setSuccess());
+        this.secretaryService.getAll().subscribe(
+            (secretaries) => { this.secretaries = secretaries._embedded.secretary; },
+            (error) => console.log(error),
+            () => this.setSuccess());
     }
 
     setSuccess() {
@@ -66,6 +67,6 @@ export class LoginFormComponent implements OnInit {
     //   Email via form.controls = {{showFormControls(UserForm)}}
     showFormControls(form: any) {
         return form && form.controls['email'] &&
-        form.controls['email'].value;
+            form.controls['email'].value;
     }
 }
