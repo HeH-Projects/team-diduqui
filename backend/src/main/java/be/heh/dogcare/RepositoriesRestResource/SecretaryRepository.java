@@ -11,9 +11,8 @@ import be.heh.dogcare.Entities.Secretary;
 @RepositoryRestResource(collectionResourceRel="secretary", path="secretary")
 public interface SecretaryRepository extends PagingAndSortingRepository<Secretary, Long> {
 
-    List<Secretary> findByEmail(@Param("email") String email);
+    Secretary findByEmail(@Param("email") String email);
     List<Secretary> findByFirstname(@Param("firstname") String firstname);
     List<Secretary> findByLastname(@Param("lastname") String lastname);
-    List<Secretary> findByPhone(@Param("phone") String phone);
-
+    Secretary findByPhone(@Param("phone") String phone);
 }
