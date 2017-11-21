@@ -12,7 +12,7 @@ import be.heh.dogcare.Entities.Customer;
 public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long> {
 
     List<Customer> findByAddress(@Param("address") String address);
-    List<Customer> findByBillingAddress(@Param("billingAddress") String billingAddress);
+    List<Customer> findByBillingaddress(@Param("billingaddress") String billingaddress);
     List<Customer> findByEmail(@Param("email") String email);
     List<Customer> findByFirstname(@Param("firstname") String firstname);
     List<Customer> findByLastname(@Param("lastname") String lastname);

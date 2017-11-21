@@ -13,7 +13,7 @@ public class Dog {
     private long id;
 
     private String description;
-    private String dogBreed;
+    private String dogbreed;
     private String name;
     private String size;
     private String weight;
@@ -33,10 +33,10 @@ public class Dog {
     }
 
     /**
-     * @return the dogBreed
+     * @return the dogbreed
      */
     public String getDogBreed() {
-        return dogBreed;
+        return dogbreed;
     }
 
     /**
@@ -61,10 +61,10 @@ public class Dog {
     }
 
     /**
-     * @param dog_breed the dogBreed to set
+     * @param dogBreed the dogBreed to set
      */
-    public void setDogBreed(String dog_breed) {
-        this.dogBreed = dog_breed;
+    public void setDogBreed(String dogbreed) {
+        this.dogbreed = dogbreed;
     }
 
     /**

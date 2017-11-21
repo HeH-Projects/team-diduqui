@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS public.customer
     email VARCHAR(200),
     firstname VARCHAR(100) NOT NULL,
     lastname VARCHAR(100) NOT NULL,
-    billingAddress VARCHAR(200) NOT NULL,
+    billingaddress VARCHAR(200) NOT NULL,
     phone VARCHAR(20),
     address VARCHAR(200)
 );
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS public.dog
 (
     id SERIAL PRIMARY KEY NOT NULL,
     description VARCHAR(500),
-    dogBreed VARCHAR(50) NOT NULL,
+    dogbreed VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     size FLOAT,
     weight FLOAT
@@ -61,7 +61,6 @@ CREATE TABLE IF NOT EXISTS public.secretary
     phone VARCHAR(20)
 );
 
-
 --Adding index to tables--
 CREATE UNIQUE INDEX appointment_id_uindex ON public.Appointment (id);
 CREATE UNIQUE INDEX customer_id_uindex ON public.customer (id);
@@ -74,21 +73,21 @@ CREATE UNIQUE INDEX secretary_id_uindex ON public.secretary (id);
 ALTER TABLE public.dog
     ADD CONSTRAINT fk_dog_id_customer
     FOREIGN KEY(id)
-    REFERENCES customer(id);
+    REFERENCES customer(id) ON DELETE CASCADE;
 
 ALTER TABLE public.room
     ADD CONSTRAINT fk_room_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id);
+    REFERENCES appointment(id) ON DELETE CASCADE;
 
 ALTER TABLE public.customer
     ADD CONSTRAINT fk_customer_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id);
+    REFERENCES appointment(id) ON DELETE CASCADE;
 
 ALTER TABLE public.doctor
     ADD CONSTRAINT fk_doctor_id_appointment
     FOREIGN KEY(id)
-    REFERENCES appointment(id);
+    REFERENCES appointment(id) ON DELETE CASCADE;
 
 

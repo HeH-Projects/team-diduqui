@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from '../user';
+import { Secretary } from '../models/secretary';
+import { SecretaryService } from '../services/secretary.service';
+import { Http, Response } from '@angular/http';
 
 @Component({
     selector: 'app-login-form',
@@ -9,52 +11,65 @@ import { User } from '../user';
 })
 export class LoginFormComponent implements OnInit {
 
-    //constructor() { }
-
-    ngOnInit() {}
+    // constructor() { }
 
     ///////////////////////
 
-    model = new User('', '');
+    complexForm: FormGroup;
+    model = new Secretary();
+    secretaries: Secretary[] = new Secretary()[9];
+    success: boolean;
 
     submitted = false;
 
     onSubmit() { this.submitted = true; }
 
-    // TODO: Remove this when we're done
-    get diagnostic() { return JSON.stringify(this.model); }
-
     newUser() {
-        this.model = new User('', '');
+        this.model = new Secretary();
     }
 
-    complexForm : FormGroup;
-
-    constructor(fb: FormBuilder){
+    constructor(private secretaryService: SecretaryService, fb: FormBuilder, private http: Http) {
         this.complexForm = fb.group({
-            'email' : [null, Validators.compose([Validators.required, Validators.email])],
+            'email': [null, Validators.compose([Validators.required, Validators.email])],
             'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])]
-        })
-    };
+        });
+    }
+
+    // Subscribe:
+    // First callback: initialisation
+    // Second callback: error,
+    // Third callback: Action after response
+    ngOnInit() {
+        // this.secretaryService.getAll().subscribe(
+        //     (secretaries) => { this.secretaries = secretaries._embedded.secretary; },
+        //     (error) => console.log(error),
+        //     () => this.setSuccess());
+    }
+
+    setSuccess() {
+        this.success = true;
+    }
+
+    connection(value: any) {
+        // if (this.success) {
+        // for (const secretary of this.secretaries) {
+        // console.log(secretary);
+        // if (value.email === secretary.email && value.password === secretary.password) {
+        // window.location.href = '/';
+        // return true;
+        // }
+        // }
+        return this.http.post('http://localhost:9000/checkUser', value)
+            .map(result => result.json())
+            .subscribe(
+                (secretary) => { console.log(secretary); }
+            );
+    }
 
     // Reveal in html:
-    //   Email via form.controls = {{showFormControls(UserForm)}}
+    // Email via form.controls = {{showFormControls(UserForm)}}
     showFormControls(form: any) {
         return form && form.controls['email'] &&
-        form.controls['email'].value;
+            form.controls['email'].value;
     }
-
-    /////////////////////////////
-
-    // TODO: Remove this when we're done
-    diagnostic_state:string = 'hidden';
-
-    displayDiagnostic() {
-        this.diagnostic_state = 'visible';
-    }
-
-    hideDiagnostic() {
-        this.diagnostic_state = 'hidden';
-    }
-
 }
