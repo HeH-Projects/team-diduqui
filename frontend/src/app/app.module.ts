@@ -13,7 +13,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SecretaryService } from './services/secretary.service';
 
 const appRoutes: Routes = [
-    {path: '', component: LoginFormComponent}
+    {path: '', component: HomeComponent},
+    {path: 'login', component: LoginFormComponent}
 ];
 
 @NgModule({

@@ -54,7 +54,7 @@ export class LoginFormComponent implements OnInit {
             for (const secretary of this.secretaries) {
                 console.log(secretary);
                 if (value.email === secretary.email && value.password === secretary.password) {
-                    console.log('hourra');
+                    window.location.href = '/';
                     return true;
                 }
             }
