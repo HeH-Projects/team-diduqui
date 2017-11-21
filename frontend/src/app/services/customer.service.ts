@@ -31,7 +31,8 @@ export class CustomerService {
     }
 
     getByBillingAddress(billingAddress: string) {
-        return this.http.get('/api/customer/search/findByBillingAddress?billingAddress=' + billingAddress).map((response: Response) => response.json());
+        return this.http.get('/api/customer/search/findByBillingAddress?billingAddress=' + billingAddress)
+                        .map((response: Response) => response.json());
     }
 
 }

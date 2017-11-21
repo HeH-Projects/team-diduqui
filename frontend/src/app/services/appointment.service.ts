@@ -15,7 +15,8 @@ export class AppointmentService {
     }
 
     getByDescription(description: string) {
-        return this.http.get('/api/appointment/search/findByDescription?description=' + description).map((response: Response) => response.json());
+        return this.http.get('/api/appointment/search/findByDescription?description=' + description)
+                        .map((response: Response) => response.json());
     }
 
     getByDuration(duration: string) {
