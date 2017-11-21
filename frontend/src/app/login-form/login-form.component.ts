@@ -10,10 +10,11 @@ import { SecretaryService } from '../services/secretary.service';
 })
 export class LoginFormComponent implements OnInit {
 
-    //constructor() { }
+    // constructor() { }
 
     ///////////////////////
 
+    complexForm: FormGroup;
     model = new Secretary();
     secretaries: Secretary[] = new Secretary()[9];
     success: boolean;
@@ -26,8 +27,6 @@ export class LoginFormComponent implements OnInit {
         this.model = new Secretary();
     }
 
-    complexForm: FormGroup;
-
     constructor(private secretaryService: SecretaryService, fb: FormBuilder) {
         this.complexForm = fb.group({
             'email': [null, Validators.compose([Validators.required, Validators.email])],
@@ -35,10 +34,10 @@ export class LoginFormComponent implements OnInit {
         });
     }
 
-    //Subscribe:
-    //First callback: initialisation
-    //Second callback: error,
-    //Third callback: Action after response
+    // Subscribe:
+    // First callback: initialisation
+    // Second callback: error,
+    // Third callback: Action after response
     ngOnInit() {
         this.secretaryService.getAll().subscribe(
             (secretaries) => { this.secretaries = secretaries._embedded.secretary; },
@@ -52,10 +51,10 @@ export class LoginFormComponent implements OnInit {
 
     connection(value: any) {
         if (this.success) {
-            for (let secretary of this.secretaries) {
+            for (const secretary of this.secretaries) {
                 console.log(secretary);
-                if (value.email == secretary.email && value.password == secretary.password) {
-                    console.log("hourra");
+                if (value.email === secretary.email && value.password === secretary.password) {
+                    console.log('hourra');
                     return true;
                 }
             }
@@ -64,7 +63,7 @@ export class LoginFormComponent implements OnInit {
     }
 
     // Reveal in html:
-    //   Email via form.controls = {{showFormControls(UserForm)}}
+    // Email via form.controls = {{showFormControls(UserForm)}}
     showFormControls(form: any) {
         return form && form.controls['email'] &&
             form.controls['email'].value;
