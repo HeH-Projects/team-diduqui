@@ -3,9 +3,13 @@
 CREATE TABLE IF NOT EXISTS public.appointment
 (
     id SERIAL PRIMARY KEY NOT NULL,
-    description VARCHAR(500),
     name VARCHAR(100) NOT NULL,
-    duration TIMESTAMP
+    dogId int NOT NULL,
+    roomId int NOT NULL,
+    doctorId int NOT NULL,
+    description VARCHAR(500),
+    date TIMESTAMP NOT NULL,
+    duration int NOT NULL
 );
 
 
@@ -38,6 +42,7 @@ CREATE TABLE IF NOT EXISTS public.dog
     description VARCHAR(500),
     dogbreed VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
+    customerId int NOT NULL,
     size FLOAT,
     weight FLOAT
 );
@@ -72,22 +77,22 @@ CREATE UNIQUE INDEX secretary_id_uindex ON public.secretary (id);
 --Adding foreign key--
 ALTER TABLE public.dog
     ADD CONSTRAINT fk_dog_id_customer
-    FOREIGN KEY(id)
+    FOREIGN KEY(customerId)
     REFERENCES customer(id) ON DELETE CASCADE;
 
-ALTER TABLE public.room
-    ADD CONSTRAINT fk_room_id_appointment
-    FOREIGN KEY(id)
-    REFERENCES appointment(id) ON DELETE CASCADE;
+ALTER TABLE public.appointment
+    ADD CONSTRAINT fk_appointment_id_room
+    FOREIGN KEY(roomId)
+    REFERENCES room(id) ON DELETE CASCADE;
 
-ALTER TABLE public.customer
-    ADD CONSTRAINT fk_customer_id_appointment
-    FOREIGN KEY(id)
-    REFERENCES appointment(id) ON DELETE CASCADE;
+ALTER TABLE public.appointment
+    ADD CONSTRAINT fk_appointment_id_dog
+    FOREIGN KEY(dogId)
+    REFERENCES dog(id) ON DELETE CASCADE;
 
-ALTER TABLE public.doctor
-    ADD CONSTRAINT fk_doctor_id_appointment
-    FOREIGN KEY(id)
-    REFERENCES appointment(id) ON DELETE CASCADE;
+ALTER TABLE public.appointment
+    ADD CONSTRAINT fk_appointment_id_doctor
+    FOREIGN KEY(doctorId)
+    REFERENCES doctor(id) ON DELETE CASCADE;
 
 
