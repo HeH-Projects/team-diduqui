@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Secretary } from '../models/secretary';
-import { SecretaryService } from '../services/secretary.service';
+import { Secretary } from '../../models/secretary';
+import { SecretaryService } from '../../services/secretary.service';
 import { Http, Response } from '@angular/http';
 
 @Component({

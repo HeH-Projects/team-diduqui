@@ -1,6 +1,6 @@
 <div id="containForm">
     <div id="loginForm">
-        <h3><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Connexion</h3>
+        <h3><span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Connection</h3>
         <hr>
         <form #userForm="ngForm" (ngSubmit)="connection(complexForm.value);">
             <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['email'].valid && complexForm.controls['email'].touched}">

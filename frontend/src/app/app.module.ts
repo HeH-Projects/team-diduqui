@@ -8,13 +8,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { SecretaryService } from './services/secretary.service';
+import { LoginFormComponent } from './views/login-form/login-form.component';
+import { CalendarComponent } from './views/calendar/calendar.component';
+import { NavBarComponent } from './views/nav-bar/nav-bar.component';
+import { DoctorComponent } from './views/doctor/doctor.component';
+import { RoomComponent } from './views/room/room.component';
+import { CustomerComponent } from './views/customer/customer.component';
+import { SettingComponent } from './views/setting/setting.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'login', component: LoginFormComponent}
+    { path: '', component: LoginFormComponent },
+    { path: 'login', component: LoginFormComponent },
+    { path: 'appointments', component: CalendarComponent },
+    { path: 'customers', component: CustomerComponent },
+    { path: 'doctors', component: DoctorComponent },
+    { path: 'rooms', component: RoomComponent },
+    { path: 'settings', component: SettingComponent }
 ];
 
 @NgModule({
@@ -27,8 +38,14 @@ const appRoutes: Routes = [
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        LoginFormComponent
+        LoginFormComponent,
+        CalendarComponent,
+        NavBarComponent,
+        DoctorComponent,
+        RoomComponent,
+        CustomerComponent,
+        SettingComponent,
+        LogoutComponent,
     ],
     providers: [SecretaryService],
     bootstrap: [AppComponent]
