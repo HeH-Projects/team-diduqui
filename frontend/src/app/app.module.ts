@@ -17,6 +17,7 @@ import { RoomComponent } from './views/room/room.component';
 import { CustomerComponent } from './views/customer/customer.component';
 import { SettingComponent } from './views/setting/setting.component';
 import { LogoutComponent } from './views/logout/logout.component';
+import { SecretaryComponent } from './views/secretary/secretary.component';
 
 const appRoutes: Routes = [
     { path: '', component: LoginFormComponent },
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     { path: 'customers', component: CustomerComponent },
     { path: 'doctors', component: DoctorComponent },
     { path: 'rooms', component: RoomComponent },
+    { path: 'secretary', component: SecretaryComponent},
     { path: 'settings', component: SettingComponent }
 ];
 
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
         CustomerComponent,
         SettingComponent,
         LogoutComponent,
+        SecretaryComponent,
     ],
     providers: [SecretaryService],
     bootstrap: [AppComponent]
