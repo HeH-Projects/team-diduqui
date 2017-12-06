@@ -19,6 +19,15 @@ nav.navbar.navbar-default {
     font-weight        : bold;
 }
 
+#logout a {
+    color: #D33C43;
+}
+
+#logout a:focus,
+#logout a:hover {
+    color: #9C2B30;
+}
+
 
 
 @media (min-width:768px) {
