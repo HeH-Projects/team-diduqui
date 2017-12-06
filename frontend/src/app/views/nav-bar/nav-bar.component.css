@@ -19,6 +19,10 @@ nav.navbar.navbar-default {
     font-weight        : bold;
 }
 
+i.glyphicon {
+        top            : 2px;
+}
+
 #logout a {
     color: #D33C43;
 }
