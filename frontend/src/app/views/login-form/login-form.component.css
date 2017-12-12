@@ -32,3 +32,11 @@ form .center {
 #visible {
     display              : block;
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 767px) {
+
+    #loginForm {
+        width                : 90%;
+    }
+}
