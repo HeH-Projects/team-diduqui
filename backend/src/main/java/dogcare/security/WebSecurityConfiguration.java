@@ -12,7 +12,7 @@ import dogcare.security.services.SecretaryDetailsService;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-    
+
     @Autowired
     private SecretaryDetailsService secretaryDetailsService;
 
@@ -25,7 +25,5 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 	http.authorizeRequests().anyRequest().permitAll().and().formLogin().loginPage("/login").and().csrf().disable();
     }
-    
-    
 
 }
