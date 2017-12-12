@@ -1,22 +1,41 @@
-package be.heh.dogcare.Entities;
+package dogcare.domain.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
-@Entity(name = "customer")
+/**
+ * A customer entity
+ * Created by the Team DiDuQui
+ */
+@Entity
 public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @Column(name = "address", nullable = false)
     private String address;
+
+    @NotNull
+    @Column(name = "billingaddress", nullable = false)
     private String billingaddress;
+
+    @NotNull
+    @Column(name = "email", nullable = false)
     private String email;
+
+    @NotNull
+    @Column(name = "firstname", nullable = false)
     private String firstname;
+
+    @NotNull
+    @Column(name = "lastname", nullable = false)
     private String lastname;
+
+    @NotNull
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     /**
@@ -97,7 +116,7 @@ public class Customer {
     }
 
     /**
-     * @param billingAddress the billing address to set
+     * @param billingaddress the billing address to set
      */
     public void setBillingAddress(String billingaddress) {
         this.billingaddress = billingaddress;

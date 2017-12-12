@@ -1,4 +1,4 @@
-package be.heh.dogcare.Entities;
+package dogcare.domain.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +30,7 @@ public class ConnectionData {
     }
 
     /**
-     * @param name the name to set
+     * @param email the name to set
      */
     public void setEmail(String email) {
         this.email = email;

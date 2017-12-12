@@ -1,10 +1,12 @@
-package be.heh.dogcare.Entities;
+package dogcare.domain.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
+/**
+ * A secretary entity
+ * Created by the Team DiDuQui
+ */
 @Entity(name = "secretary")
 public class Secretary {
 
@@ -12,11 +14,40 @@ public class Secretary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @Column(name = "email", nullable = false)
     private String email;
+
+    @NotNull
+    @Column(name = "firstname", nullable = false)
     private String firstname;
+
+    @NotNull
+    @Column(name = "lastname", nullable = false)
     private String lastname;
+
+    @NotNull
+    @Column(name = "password", nullable = false)
     private String password;
+
+    @NotNull
+    @Column(name = "phone", nullable = false)
     private String phone;
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * Set the id
+     * @param id the id
+     */
+    public void setId(long id) {
+        this.id = id;
+    }
 
     /**
      * @return the email
