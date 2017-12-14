@@ -32,10 +32,13 @@ i.glyphicon {
     color: #9C2B30;
 }
 
-
+li[id^='nav-'], li#logout {
+    cursor: pointer;
+}
 
 @media (min-width:768px) {
     .navbar {
         border-radius  : 0 0 10px 10px;
     }
 }
+

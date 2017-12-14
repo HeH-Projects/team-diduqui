@@ -31,7 +31,7 @@ export class TokenService {
                 }
             }, (err: HttpErrorResponse) => {
                 if (err.status === 401) {
-                    callback('error');
+                    callback('[ERROR]: Bad credentials');
                 }
             });
     }

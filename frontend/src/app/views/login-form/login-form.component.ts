@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Secretary } from '../../models/secretary';
 import { Http, Response } from '@angular/http';
+import { SecretaryService } from '../../services/secretary.service';
 import { TokenService } from '../../services/token.service';
 
 @Component({
@@ -17,19 +18,22 @@ export class LoginFormComponent implements OnInit {
     ///////////////////////
 
     complexForm: FormGroup;
-    model = new Secretary();
-    secretaries: Secretary[] = new Secretary()[9];
     success: boolean;
+    secretary: Secretary = new Secretary();
 
     submitted = false;
 
     onSubmit() { this.submitted = true; }
 
-    newUser() {
-        this.model = new Secretary();
-    }
-
-    constructor(fb: FormBuilder, private router: Router, private http: Http, private token: TokenService) {
+    constructor(private secretaryService: SecretaryService, fb: FormBuilder, private router: Router, private http: Http,
+        private token: TokenService) {
+        if (window.sessionStorage.access_token && window.sessionStorage.access_token !== 'null') {
+            if (window.sessionStorage.last_endpoint && window.sessionStorage.last_endpoint !== 'null') {
+                this.router.navigate([window.sessionStorage.last_endpoint]);
+            } else {
+                this.router.navigate(['/appointments']);
+            }
+        }
         this.complexForm = fb.group({
             'email': [null, Validators.compose([Validators.required, Validators.email])],
             'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])]
@@ -50,6 +54,7 @@ export class LoginFormComponent implements OnInit {
                 console.log('it works pas!');
             } else {
                 console.log(token);
+                window.sessionStorage.access_token = token;
                 this.router.navigate(['/appointments']);
             }
         }.bind(this));

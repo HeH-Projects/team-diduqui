@@ -22,14 +22,13 @@ public class AuthServiceConfiguration extends AuthorizationServerConfigurerAdapt
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-	clients.inMemory().withClient("dogcare").secret("secret").authorizedGrantTypes("password").scopes("openid")
+	clients.inMemory().withClient("dogcare").secret("secret").authorizedGrantTypes("password", "refresh_token").scopes("openid")
 		.accessTokenValiditySeconds(120).refreshTokenValiditySeconds(300);
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-	endpoints.authenticationManager(authenticationManager);
-	endpoints.userDetailsService(secretaryDetailsService);
+	endpoints.authenticationManager(authenticationManager).userDetailsService(secretaryDetailsService);
     }
 
 }
