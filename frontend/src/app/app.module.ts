@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SecretaryService } from './services/secretary.service';
+import { TokenService } from './services/token.service';
 import { LoginFormComponent } from './views/login-form/login-form.component';
 import { CalendarComponent } from './views/calendar/calendar.component';
 import { NavBarComponent } from './views/nav-bar/nav-bar.component';
@@ -50,7 +51,7 @@ const appRoutes: Routes = [
         LogoutComponent,
         SecretaryComponent,
     ],
-    providers: [SecretaryService],
+    providers: [SecretaryService, TokenService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
