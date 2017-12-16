@@ -23,22 +23,26 @@ i.glyphicon {
         top            : 2px;
 }
 
+.fa-spin-hover:hover i.fa {
+    -webkit-animation  : fa-spin 2s infinite linear;
+    animation          : fa-spin 2s infinite linear;
+}
+
 #logout a {
-    color: #D33C43;
+    color              : #D33C43;
 }
 
 #logout a:focus,
 #logout a:hover {
-    color: #9C2B30;
+    color              : #9C2B30;
 }
 
 li[id^='nav-'], li#logout {
-    cursor: pointer;
+    cursor             : pointer;
 }
 
 @media (min-width:768px) {
     .navbar {
-        border-radius  : 0 0 10px 10px;
+        border-radius      : 0 0 10px 10px;
     }
 }
-
