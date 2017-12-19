@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { RoomService } from '../../services/room.service';
+import { error } from 'selenium-webdriver';
 
 @Component({
     selector: 'app-room',
     templateUrl: './room.component.html',
-    styleUrls: ['./room.component.css']
+    styleUrls: ['./room.component.css'],
+    providers: [RoomService]
 })
 export class RoomComponent implements OnInit {
 
-    constructor() { }
+    rooms: String[];
+
+    constructor(private roomService: RoomService) { }
 
     ngOnInit() {
         window.sessionStorage.last_endpoint = '/rooms';
@@ -16,6 +21,13 @@ export class RoomComponent implements OnInit {
             navElems[i].classList.remove('active');
         }
         document.getElementById('nav-rooms').classList.add('active');
+
+        this.roomService.getAll().subscribe(
+            data => {
+                this.rooms = data["room"];
+            },
+            error => console.error(error)
+        );
     }
 
 }
