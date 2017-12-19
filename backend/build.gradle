@@ -23,16 +23,23 @@ repositories {
 }
 
 dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.security.oauth:spring-security-oauth2')
+    runtime('org.springframework.boot:spring-boot-devtools')
     runtime('org.postgresql:postgresql')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 task buildAngular(type:Exec) {
-    commandLine '../buildAngular.sh'
+    if (System.getProperty("os.name").toUpperCase().contains("WINDOWS")){
+        commandLine '../buildAngularWin.bat'
+    } else {
+        commandLine '../buildAngular.sh'
+    }
 }
 
 compileJava.dependsOn buildAngular

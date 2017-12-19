@@ -18,8 +18,8 @@ export class SecretaryService {
         return this.http.get('/api/secretary/search/findByFirstname?firstname=' + firstname).map((response: Response) => response.json());
     }
 
-    getByEmail(email: string) {
-        return this.http.get('/api/secretary/search/findByEmail?email=' + email).map((response: Response) => response.json());
+    getByEmail(email: string, token: string) {
+        return this.http.get('/api/secretary/search/findByEmail?email=' + email + token).map((response: Response) => response.json());
     }
 
     getByPhone(phone: string) {

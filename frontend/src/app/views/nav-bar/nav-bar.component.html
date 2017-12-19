@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                                                                         aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">DogCare</span>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li id="nav-appointments">
+                    <a (click)="goTo('appointments')" class="fa-spin-hover"><i class="fa fa-calendar-check-o fa-fw" aria-hidden="true"></i> Appointments</a>
+                </li>
+
+                <li id="nav-customers">
+                    <a (click)="goTo('customers')" class="fa-spin-hover"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Customers</a>
+                </li>
+
+                <li id="nav-doctors">
+                    <a (click)="goTo('doctors')" class="fa-spin-hover"><i class="fa fa-user-md fa-fw" aria-hidden="true"></i> Doctors</a>
+                </li>
+
+                <li id="nav-rooms">
+                    <a (click)="goTo('rooms')" class="fa-spin-hover"><i class="fa fa-stethoscope fa-fw"></i> Rooms</a>
+                </li>
+
+                <li id="nav-secretary">
+                    <a (click)="goTo('secretary')" class="fa-spin-hover"><i class="fa fa-phone fa-fw" aria-hidden="true"></i> Secretary</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li id="nav-settings">
+                    <a (click)="goTo('settings')" class="fa-spin-hover"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> Settings</a>
+                </li>
+
+                <li id="logout">
+                    <a (click)="logout()" class="fa-spin-hover"><i class="fa fa-power-off fa-fw" aria-hidden="true"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
