@@ -1,0 +1,11 @@
+h1 {
+    margin-bottom      : 35px;
+}
+
+h1 i.fa {
+    color              : #777;
+}
+
+.jumbotron {
+    text-align         : center;
+}
