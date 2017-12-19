@@ -22,12 +22,12 @@
                     </thead>
                 </table>
                 <tbody>
-                    <tr *ngFor="let post of customers">
-                        <td class="text-center">{{post.email}}</td>
-                        <td class="text-center">{{post.address}}</td>
-                        <td class="text-center">{{post.billingaddress}}</td>
-                        <td class="text-center">{{post.firstname}}</td>
-                        <td class="text-center">{{post.lastname}}</td>
+                    <tr *ngFor="let customer of customers">
+                        <td class="text-center">{{customer.email}}</td>
+                        <td class="text-center">{{customer.address}}</td>
+                        <td class="text-center">{{customer.billingaddress}}</td>
+                        <td class="text-center">{{customer.firstname}}</td>
+                        <td class="text-center">{{customer.lastname}}</td>
                         <td class="text-center">
                             <a href="#">Edit</a>
                         </td>
