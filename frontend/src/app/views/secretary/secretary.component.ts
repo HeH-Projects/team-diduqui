@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SecretaryService } from '../../services/secretary.service';
+import { Secretary } from '../../models/secretary';
 import { error } from 'selenium-webdriver';
 
 @Component({
@@ -10,7 +11,7 @@ import { error } from 'selenium-webdriver';
 })
 export class SecretaryComponent implements OnInit {
 
-    secretaries: String[];
+    secretaries: Secretary[];
 
     constructor(private secretaryService: SecretaryService) { }
 
@@ -22,13 +23,10 @@ export class SecretaryComponent implements OnInit {
         }
         document.getElementById('nav-secretary').classList.add('active');
 
-        this.secretaryService.getAll().subscribe(
-            data => {
-                this.secretaries = data['secretary'];
-                console.log(this.secretaries);
-            },
-            error => console.error(error)
-        );
+        this.secretaryService.getAll().subscribe(data => {
+            if (data)
+                this.secretaries = data.content;
+        });
     }
 
 }
