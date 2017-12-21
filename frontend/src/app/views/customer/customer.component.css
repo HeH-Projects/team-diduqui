@@ -1,0 +1,16 @@
+h1 {
+    margin-bottom      : 35px;
+}
+
+h1 i.fa {
+    color              : #777;
+}
+
+.table {
+    border-radius      : 10px 10px 0px 0px;
+    background-color   : rgba(200,200,200,0.6);
+}
+
+child>th {
+    color              : black;
+}

@@ -3,7 +3,41 @@
 <div class="container">
     <main role="main">
 
-        <h1>Customer works!</h1>
+        <h1>
+            <i class="fa fa-user fa-fw" aria-hidden="true"></i> Customers
+        </h1>
+
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th class="text-center">E-mail</th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">Billing address</th>
+                            <th class="text-center">Firstname</th>
+                            <th class="text-center">Lastname</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                </table>
+                <tbody>
+                    <tr *ngFor="let customer of customers">
+                        <td class="text-center">{{customer.email}}</td>
+                        <td class="text-center">{{customer.address}}</td>
+                        <td class="text-center">{{customer.billingaddress}}</td>
+                        <td class="text-center">{{customer.firstname}}</td>
+                        <td class="text-center">{{customer.lastname}}</td>
+                        <td class="text-center">
+                            <a href="#">Edit</a>
+                        </td>
+                        <td class="text-center">
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
 
     </main>
 </div>
