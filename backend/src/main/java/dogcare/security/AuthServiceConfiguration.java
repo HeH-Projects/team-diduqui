@@ -22,8 +22,8 @@ public class AuthServiceConfiguration extends AuthorizationServerConfigurerAdapt
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-	clients.inMemory().withClient("dogcare").secret("secret").authorizedGrantTypes("password", "refresh_token").scopes("openid")
-		.accessTokenValiditySeconds(120).refreshTokenValiditySeconds(300);
+	clients.inMemory().withClient("dogcare").secret("secret").authorizedGrantTypes("password", "refresh_token")
+		.scopes("openid").accessTokenValiditySeconds(120).refreshTokenValiditySeconds(300);
     }
 
     @Override
