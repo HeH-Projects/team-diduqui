@@ -23,7 +23,8 @@ export class RoomService {
     }
 
     getByDescription(description: string) {
-        return this.http.get('/api/room/search/findByDescription?description=' + description, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/room/search/findByDescription?description=' + description, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
 }
