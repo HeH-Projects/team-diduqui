@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TokenService } from './token.service';
 
 @Injectable()
 export class AppointmentService {
-    constructor(private http: Http) { }
+    constructor(private http: Http, private token: TokenService) { }
+
+    makeHeaders() {
+        const headers: Headers = new Headers();
+        headers.append('Authorization', 'bearer ' + this.token.getToken());
+        return new RequestOptions({headers: headers});
+    }
 
     getAll() {
-        return this.http.get('/api/appointment').map((response: Response) => response.json());
+        return this.http.get('/api/appointment', this.makeHeaders()).map((response: Response) => response.json());
     }
 
     getByName(name: string) {

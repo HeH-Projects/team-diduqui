@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
 
     constructor(private secretaryService: SecretaryService, fb: FormBuilder, private router: Router, private http: Http,
         private token: TokenService) {
-        if (window.sessionStorage.access_token && window.sessionStorage.access_token !== 'null') {
+        if (window.sessionStorage.token && window.sessionStorage.token !== 'null') {
             if (window.sessionStorage.last_endpoint && window.sessionStorage.last_endpoint !== 'null') {
                 this.router.navigate([window.sessionStorage.last_endpoint]);
             } else {
@@ -49,12 +49,11 @@ export class LoginFormComponent implements OnInit {
     }
 
     connection(value: any) {
-        this.token.generate(value.email, value.password, function(token) {
+        this.token.generate(value.email, value.password, function(token, refresh_token) {
             if (token === 'error') {
                 console.log('it works pas!');
             } else {
-                console.log(token);
-                window.sessionStorage.access_token = token;
+                window.sessionStorage.token = token;
                 this.router.navigate(['/appointments']);
             }
         }.bind(this));
