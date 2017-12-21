@@ -19,18 +19,22 @@ export class SecretaryService {
     }
 
     getByLastname(lastname: string) {
-        return this.http.get('/api/secretary/search/findByLastname?lastname=' + lastname, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/secretary/search/findByLastname?lastname=' + lastname, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByFirstname(firstname: string) {
-        return this.http.get('/api/secretary/search/findByFirstname?firstname=' + firstname, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/secretary/search/findByFirstname?firstname=' + firstname, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByEmail(email: string, token: string) {
-        return this.http.get('/api/secretary/search/findByEmail?email=' + email + token, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/secretary/search/findByEmail?email=' + email + token, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByPhone(phone: string) {
-        return this.http.get('/api/secretary/search/findByPhone?phone=' + phone, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/secretary/search/findByPhone?phone=' + phone, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 }

@@ -18,16 +18,18 @@ export class AppointmentService {
     }
 
     getByName(name: string) {
-        return this.http.get('/api/appointment/search/findByName?name=' + name).map((response: Response) => response.json());
+        return this.http.get('/api/appointment/search/findByName?name=' + name, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByDescription(description: string) {
-        return this.http.get('/api/appointment/search/findByDescription?description=' + description)
+        return this.http.get('/api/appointment/search/findByDescription?description=' + description, this.makeHeaders())
                         .map((response: Response) => response.json());
     }
 
     getByDuration(duration: string) {
-        return this.http.get('/api/appointment/search/findByDuration?duration=' + duration).map((response: Response) => response.json());
+        return this.http.get('/api/appointment/search/findByDuration?duration=' + duration, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
 }
