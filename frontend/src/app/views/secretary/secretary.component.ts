@@ -24,8 +24,9 @@ export class SecretaryComponent implements OnInit {
         document.getElementById('nav-secretary').classList.add('active');
 
         this.secretaryService.getAll().subscribe(data => {
-            if (data)
+            if (data) {
                 this.secretaries = data.content;
+            }
         });
     }
 
