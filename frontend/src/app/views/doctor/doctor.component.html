@@ -3,7 +3,40 @@
 <div class="container">
     <main role="main">
 
-        <h1>Doctor works!</h1>
+        <h1>
+            <i class="fa fa-user-md fa-fw" aria-hidden="true"></i> Doctors</h1>
+
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th class="text-center">E-mail</th>
+                            <th class="text-center">Firstname</th>
+                            <th class="text-center">Lastname</th>
+                            <th class="text-center">Phone number</th>
+                            <th class="text-center">Specialty</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let doctor of doctors">
+                            <td class="text-center">{{doctor.email}}</td>
+                            <td class="text-center">{{doctor.firstname}}</td>
+                            <td class="text-center">{{doctor.lastname}}</td>
+                            <td class="text-center">{{doctor.phone}}</td>
+                            <td class="text-center">{{doctor.specialty}}</td>
+                            <td class="text-center">
+                                <a href="#">Edit</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 </div>

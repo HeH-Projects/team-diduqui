@@ -3,7 +3,34 @@
 <div class="container">
     <main role="main">
 
-        <h1>Room works!</h1>
+        <h1>
+            <i class="fa fa-stethoscope fa-fw" aria-hidden="true"></i> Rooms</h1>
+
+        <div class="container">
+            <div class="row">
+                <table class="table">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let room of rooms">
+                            <td class="text-center">{{room.name}}</td>
+                            <td class="text-center">{{room.description}}</td>
+                            <td class="text-center">
+                                <a href="#">Edit</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     </main>
 </div>
