@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     { path: 'customers', component: CustomerComponent },
     { path: 'doctors', component: DoctorComponent },
     { path: 'rooms', component: RoomComponent },
-    { path: 'secretary', component: SecretaryComponent},
+    { path: 'secretaries', component: SecretaryComponent},
     { path: 'settings', component: SettingComponent }
 ];
 
