@@ -22,7 +22,8 @@ export class DogService {
     }
 
     getByDogBreed(dogBreed: string) {
-        return this.http.get('/api/dog/search/findByDogBreed?dogBreed=' + dogBreed, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/dog/search/findByDogBreed?dogBreed=' + dogBreed, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getBySize(size: string) {
@@ -30,11 +31,13 @@ export class DogService {
     }
 
     getByWeight(weight: string) {
-        return this.http.get('/api/dog/search/findByWeight?weight=' + weight, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/dog/search/findByWeight?weight=' + weight, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByDescription(description: string) {
-        return this.http.get('/api/dog/search/findByDescription?description=' + description, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/dog/search/findByDescription?description=' + description, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
 }

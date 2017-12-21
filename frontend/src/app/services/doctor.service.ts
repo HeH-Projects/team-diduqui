@@ -19,22 +19,27 @@ export class DoctorService {
     }
 
     getByLastname(lastname: string) {
-        return this.http.get('/api/doctor/search/findByLastname?lastname=' + lastname, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/doctor/search/findByLastname?lastname=' + lastname, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByFirstname(firstname: string) {
-        return this.http.get('/api/doctor/search/findByFirstname?firstname=' + firstname, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/doctor/search/findByFirstname?firstname=' + firstname, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByEmail(email: string) {
-        return this.http.get('/api/doctor/search/findByEmail?email=' + email, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/doctor/search/findByEmail?email=' + email, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getByPhone(phone: string) {
-        return this.http.get('/api/doctor/search/findByPhone?phone=' + phone, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/doctor/search/findByPhone?phone=' + phone, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 
     getBySpecialty(specialty: string) {
-        return this.http.get('/api/doctor/search/findBySpecialty?specialty=' + specialty, this.makeHeaders()).map((response: Response) => response.json());
+        return this.http.get('/api/doctor/search/findBySpecialty?specialty=' + specialty, this.makeHeaders())
+            .map((response: Response) => response.json());
     }
 }
