@@ -25,6 +25,7 @@ export class SecretaryComponent implements OnInit {
         this.secretaryService.getAll().subscribe(
             data => {
                 this.secretaries = data['secretary'];
+                console.log(this.secretaries);
             },
             error => console.error(error)
         );
