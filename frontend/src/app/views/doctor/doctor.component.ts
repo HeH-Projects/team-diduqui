@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../services/doctor.service';
 import { error } from 'selenium-webdriver';
+import { Doctor } from '../../models/index';
 
 @Component({
     selector: 'app-doctor',
@@ -10,7 +11,7 @@ import { error } from 'selenium-webdriver';
 })
 export class DoctorComponent implements OnInit {
 
-    doctors: String[]
+    doctors: Doctor[];
 
     constructor(private doctorService: DoctorService) { }
 
@@ -22,12 +23,12 @@ export class DoctorComponent implements OnInit {
         }
         document.getElementById('nav-doctors').classList.add('active');
 
-        this.doctorService.getAll().subscribe(
-            data => {
-                this.doctors = data['doctor'];
-            },
-            error => console.error(error)
-        );
+        this.doctorService.getAll().subscribe(data => {
+            if (data) {
+                this.doctorService = data.content;
+
+            }
+        });
     }
 
 }
