@@ -15,7 +15,7 @@ export class SecretaryComponent implements OnInit {
     constructor(private secretaryService: SecretaryService) { }
 
     ngOnInit() {
-        window.sessionStorage.last_endpoint = '/secretary';
+        window.sessionStorage.last_endpoint = '/secretaries';
         const navElems = document.getElementsByTagName('li');
         for (let i = 0; i < navElems.length; i++) {
             navElems[i].classList.remove('active');
