@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomService } from '../../services/room.service';
+import { Room } from '../../models/room';
 import { error } from 'selenium-webdriver';
 
 @Component({
@@ -10,7 +11,7 @@ import { error } from 'selenium-webdriver';
 })
 export class RoomComponent implements OnInit {
 
-    rooms: String[];
+    rooms: Room[];
 
     constructor(private roomService: RoomService) { }
 
@@ -22,12 +23,11 @@ export class RoomComponent implements OnInit {
         }
         document.getElementById('nav-rooms').classList.add('active');
 
-        this.roomService.getAll().subscribe(
-            data => {
-                this.rooms = data["room"];
-            },
-            error => console.error(error)
-        );
+        this.roomService.getAll().subscribe(data => {
+            if (data) {
+                this.rooms = data.content;
+            }
+        });
     }
 
 }
