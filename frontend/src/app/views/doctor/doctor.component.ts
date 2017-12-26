@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../../services/doctor.service';
+import { Doctor } from '../../models/doctor';
 import { error } from 'selenium-webdriver';
-import { Doctor } from '../../models/index';
 
 @Component({
     selector: 'app-doctor',
@@ -25,8 +25,7 @@ export class DoctorComponent implements OnInit {
 
         this.doctorService.getAll().subscribe(data => {
             if (data) {
-                this.doctorService = data.content;
-
+                this.doctors = data.content;
             }
         });
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
+import { Customer } from '../../models/customer';
 import { error } from 'selenium-webdriver';
 
 @Component({
@@ -7,11 +8,10 @@ import { error } from 'selenium-webdriver';
     templateUrl: './customer.component.html',
     styleUrls: ['./customer.component.css'],
     providers: [CustomerService]
-
 })
 export class CustomerComponent implements OnInit {
 
-    customers: String[];
+    customers: Customer[];
 
     constructor(private customerService: CustomerService) { }
 
@@ -23,12 +23,11 @@ export class CustomerComponent implements OnInit {
         }
         document.getElementById('nav-customers').classList.add('active');
 
-        this.customerService.getAll().subscribe(
-            data => {
-                this.customers = data['customer'];
-            },
-            error => console.error(error)
-        );
+        this.customerService.getAll().subscribe(data => {
+            if (data) {
+                this.customers = data.content;
+            }
+        });
     }
 
 }

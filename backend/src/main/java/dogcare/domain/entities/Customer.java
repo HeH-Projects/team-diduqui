@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  * A customer entity
  * Created by the Team DiDuQui
  */
-@Entity
+@Entity(name = "customer")
 public class Customer {
 
     @Id

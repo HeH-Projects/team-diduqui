@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
  * A room entity
  * Created by the Team DiDuQui
  */
-@Entity
+@Entity(name = "room")
 public class Room {
 
     @Id

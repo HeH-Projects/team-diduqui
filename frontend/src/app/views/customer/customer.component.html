@@ -20,22 +20,22 @@
                             <th class="text-center">Actions</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr *ngFor="let customer of customers">
+                            <td class="text-center">{{customer.email}}</td>
+                            <td class="text-center">{{customer.address}}</td>
+                            <td class="text-center">{{customer.billingaddress}}</td>
+                            <td class="text-center">{{customer.firstname}}</td>
+                            <td class="text-center">{{customer.lastname}}</td>
+                            <td class="text-center">
+                                <a href="#">Edit</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
-                <tbody>
-                    <tr *ngFor="let customer of customers">
-                        <td class="text-center">{{customer.email}}</td>
-                        <td class="text-center">{{customer.address}}</td>
-                        <td class="text-center">{{customer.billingaddress}}</td>
-                        <td class="text-center">{{customer.firstname}}</td>
-                        <td class="text-center">{{customer.lastname}}</td>
-                        <td class="text-center">
-                            <a href="#">Edit</a>
-                        </td>
-                        <td class="text-center">
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-                </tbody>
             </div>
         </div>
 

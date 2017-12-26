@@ -3,7 +3,7 @@ package dogcare.domain.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Entity(name = "doctor")
 public class Doctor {
 
     @Id
