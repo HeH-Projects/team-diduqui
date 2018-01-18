@@ -14,3 +14,11 @@ h1 i.fa {
 child>th {
     color              : black;
 }
+
+button {
+
+    text-align: center;
+    margin: auto;
+    display: block;
+
+}
