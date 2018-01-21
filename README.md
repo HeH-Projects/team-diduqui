@@ -1,6 +1,6 @@
 # DogCare
 
-[![Build Status](https://travis-ci.org/HeH-Projects/team-diduqui.svg?branch=master)](https://travis-ci.org/HeH-Projects/team-diduqui)
+Master Status: [![Build Status](https://travis-ci.org/HeH-Projects/team-diduqui.svg?branch=master)](https://travis-ci.org/HeH-Projects/team-diduqui) Develop Status: [![Build Status](https://travis-ci.org/HeH-Projects/team-diduqui.svg?branch=develop)](https://travis-ci.org/HeH-Projects/team-diduqui)
 
 ![angular-logo](assets/angular.png "Angular logo") ![spring-logo](assets/spring.png "Spring logo")
 
@@ -17,6 +17,6 @@ repository.
 
 ## Main Contributors
 
-- [Florian Di Vrusa](https://github.com/floDV1996)
+- [Florian Di Vrusa](https://github.com/floDV)
 - [Alexandre Ducobu](https://github.com/Harchytekt)
 - [Guillaume Quittet](https://github.com/gquittet)
