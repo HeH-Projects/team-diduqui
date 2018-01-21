@@ -30,4 +30,13 @@ export class DoctorComponent implements OnInit {
         });
     }
 
+    delete(doc: Doctor): void {
+        this.doctorService.delete(doc.id);
+        this.reload();
+    }
+
+    reload(): void {
+        window.location.reload();
+    }
+
 }

@@ -42,4 +42,9 @@ export class DoctorService {
         return this.http.get('/api/doctor/search/findBySpecialty?specialty=' + specialty, this.makeHeaders())
             .map((response: Response) => response.json());
     }
+
+    delete(id: number) {
+        return this.http.delete('api/doctor/' + id, this.makeHeaders())
+        .map((response: Response) => response.json()) 
+    }
 }

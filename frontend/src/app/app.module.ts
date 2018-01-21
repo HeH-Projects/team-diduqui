@@ -19,6 +19,7 @@ import { CustomerComponent } from './views/customer/customer.component';
 import { SettingComponent } from './views/setting/setting.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { SecretaryComponent } from './views/secretary/secretary.component';
+import { AddDoctorComponent } from './views/add-doctor/add-doctor.component';
 
 const appRoutes: Routes = [
     { path: '', component: LoginFormComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     { path: 'doctors', component: DoctorComponent },
     { path: 'rooms', component: RoomComponent },
     { path: 'secretaries', component: SecretaryComponent},
-    { path: 'settings', component: SettingComponent }
+    { path: 'settings', component: SettingComponent },
+    { path: 'addDoctor', component: AddDoctorComponent}
 ];
 
 @NgModule({
@@ -50,6 +52,7 @@ const appRoutes: Routes = [
         SettingComponent,
         LogoutComponent,
         SecretaryComponent,
+        AddDoctorComponent,
     ],
     providers: [SecretaryService, TokenService],
     bootstrap: [AppComponent]
