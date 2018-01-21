@@ -45,6 +45,6 @@ export class DoctorService {
 
     delete(id: number) {
         return this.http.delete('api/doctor/' + id, this.makeHeaders())
-        .map((response: Response) => response.json()) 
+            .map((response: Response) => response.json());
     }
 }
