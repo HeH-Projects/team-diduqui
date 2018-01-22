@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router/src/router';
 
 @Injectable()
 export class TokenService {
@@ -8,12 +9,20 @@ export class TokenService {
     data: any = null;
     username: string;
     password: string;
+    router: Router;
 
     constructor(private http: Http) {
     }
 
     getToken() {
-        return this.data.access_token;
+        if(this.data === null || typeof this.data === 'undefined') {
+
+            window.sessionStorage.token = null;
+
+            this.router.navigate(['/']);
+        } else {
+            return this.data.access_token;
+        }
     }
 
     generate(email, password, callback) {
