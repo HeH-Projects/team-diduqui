@@ -18,8 +18,7 @@ export class NavBarComponent implements OnInit {
     }
 
     logout() {
-        window.sessionStorage.access_token = null;
-        window.sessionStorage.last_endpoint = null;
+        window.sessionStorage.token = null;
         this.router.navigate(['/']);
     }
 
