@@ -9,9 +9,8 @@ export class TokenService {
     data: any = null;
     username: string;
     password: string;
-    router: Router;
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private router: Router) {
     }
 
     getToken() {
