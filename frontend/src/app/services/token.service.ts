@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router/src/router';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class TokenService {
